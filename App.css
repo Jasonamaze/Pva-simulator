@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* --- 頂部數據儀表板 --- */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.top-bar h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #202124;
+}
+
+.metrics-group {
+  display: flex;
+  gap: 24px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric span {
+  font-size: 0.8rem;
+  color: #5f6368;
+  margin-bottom: 4px;
+}
+
+.metric strong {
+  font-size: 1.2rem;
+}
+
+/* --- 主畫布區域 --- */
+.main-content {
+  padding: 20px;
+}
+
+.canvas-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #222;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.zone-labels {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4px 0;
+  background: rgba(255,255,255,0.1);
+}
+
+.zone-label {
+  flex: 1;
+  text-align: center;
+  color: #add8e6;
+  font-size: 0.75rem;
+  border-right: 1px dashed rgba(255,255,255,0.2);
+}
+.zone-label:last-child { border: none; }
+
+.sim-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.status-banner {
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.status-banner.capture {
+  background: #fce8e6;
+  color: #ea4335;
+}
+
+.status-banner.flush {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+/* --- 控制面板 --- */
+.control-panel {
+  margin-top: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.play-btn {
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: opacity 0.2s;
+  min-width: 180px;
+}
+.play-btn:hover { opacity: 0.9; }
+.play-btn.start { background: #1a73e8; }
+.play-btn.stop { background: #ea4335; }
+
+.sliders {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+}
+
+.slider-row label {
+  width: 180px;
+  font-size: 0.9rem;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+}
+.slider-row input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- 底部直方圖 --- */
+.histogram-panel {
+  background: #fafafa;
+  padding: 20px 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.histogram-panel h3 {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  color: #202124;
+}
+
+.bars-container {
+  display: flex;
+  justify-content: space-between;
+  height: 140px;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+.bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-value {
+  font-size: 0.8rem;
+  color: #ea4335;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.bar-bg {
+  width: 30px;
+  height: 100px;
+  background: #e0e0e0;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar-fill {
+  width: 100%;
+  background: #202124;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+}
+
+.bar-label {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #5f6368;
+}
